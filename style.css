@@ -1,0 +1,74 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(45deg, #5f4b8b, #9d5b88, #d89f91);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background: linear-gradient(45deg, #5f4b8b, #9d5b88, #d89f91);
+  }
+  50% {
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff00ff);
+  }
+  100% {
+    background: linear-gradient(45deg, #5f4b8b, #9d5b88, #d89f91);
+  }
+}
+
+body {
+  animation: backgroundMove 10s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.7), 0 0 45px rgba(255, 255, 255, 1);
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 4s ease forwards, zoomIn 4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
